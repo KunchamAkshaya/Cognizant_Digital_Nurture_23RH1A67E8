@@ -1,0 +1,1 @@
+public class Test{ public static void main(String[] a){ int x=10,y=20; System.out.println(x+y); }}
