@@ -1,0 +1,22 @@
+
+body{
+background:linear-gradient(135deg,#dbeafe,#f5d0fe);
+padding-bottom:70px;
+}
+.hero{
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+.box{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+section{
+background:rgba(255,255,255,.8);
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+backdrop-filter:blur(6px);
+}
