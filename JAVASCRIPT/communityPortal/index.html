@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    </div>
+  </section>
+
+  <!-- Loading Spinner -->
+  <div id="loader" class="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Event Cards -->
+  <section class="events-section">
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div id="eventsContainer" class="events-grid"></div>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="form-section">
+    <div class="form-card">
+      <h2>Register For An Event</h2>
+
+      <form id="registrationForm">
+
+        <div class="input-group">
+          <input type="text" name="name" placeholder="Your Name" />
+          <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Your Email" />
+          <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+          <select name="event">
+            <option value="">Choose Event</option>
+          </select>
+          <small class="error"></small>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Confirm Registration
+        </button>
+      </form>
+
+      <div id="messageBox"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+     Thank you!!!
+    </p>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="main.js"></script>
+</body>
+</html>
