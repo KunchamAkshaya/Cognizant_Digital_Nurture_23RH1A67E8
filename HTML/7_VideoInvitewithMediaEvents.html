@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo Video</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        video {
+            border: 4px solid blue;
+            border-radius: 10px;
+        }
+
+        #videoMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Community Event Promo</h2>
+
+        <!-- Video Element -->
+        <video width="500"
+               controls
+               oncanplay="videoReady()">
+
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+            Your browser does not support video.
+        </video>
+
+        <!-- Message -->
+        <p id="videoMessage"></p>
+      
+
+    </div>
+
+    <script>
+
+        let formChanged = false;
+
+        /* Video Event */
+        function videoReady() {
+
+            document.getElementById("videoMessage").innerHTML =
+                "Video ready to play";
+        }
+
+        /* Detect changes in form */
+        document.getElementById("name").addEventListener(
+            "input",
+            function() {
+                formChanged = true;
+            }
+        );
+
+        /* Warn before leaving page */
+        window.onbeforeunload = function() {
+
+            if(formChanged) {
+                return "You have unsaved changes!";
+            }
+        };
+
+    </script>
+
+</body>
+</html>
