@@ -1,0 +1,1 @@
+public class Sample{ public void show(){ System.out.println("Hello"); } public static void main(String[] a){ new Sample().show(); }}
