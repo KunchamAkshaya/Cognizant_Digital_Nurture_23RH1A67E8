@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            text-align: center;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Event Preference</h2>
+
+        <!-- Dropdown -->
+        <select id="eventType">
+
+            <option value="">Select Event</option>
+
+            <option value="Music Festival">
+                Music Festival
+            </option>
+
+            <option value="Sports Event">
+                Sports Event
+            </option>
+
+            <option value="Food Fair">
+                Food Fair
+            </option>
+
+            <option value="Book Exhibition">
+                Book Exhibition
+            </option>
+
+        </select>
+
+        <!-- Save Button -->
+        <button onclick="savePreference()">
+            Save Preference
+        </button>
+
+        <!-- Clear Button -->
+        <button onclick="clearPreferences()">
+            Clear Preferences
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script>
+
+        /* Retrieve saved value on page load */
+        window.onload = function() {
+
+            let savedEvent =
+                localStorage.getItem("preferredEvent");
+
+            if(savedEvent) {
+
+                document.getElementById("eventType").value =
+                    savedEvent;
+
+                document.getElementById("message").innerHTML =
+                    "Saved preference loaded";
+            }
+        };
+
+        /* Save preference */
+        function savePreference() {
+
+            let selectedEvent =
+                document.getElementById("eventType").value;
+
+            localStorage.setItem(
+                "preferredEvent",
+                selectedEvent
+            );
+
+            /* Example sessionStorage */
+            sessionStorage.setItem(
+                "sessionMessage",
+                "User preference saved"
+            );
+
+            document.getElementById("message").innerHTML =
+                "Preference Saved Successfully";
+        }
+
+        /* Clear both storages */
+        function clearPreferences() {
+
+            localStorage.clear();
+
+            sessionStorage.clear();
+
+            document.getElementById("eventType").value = "";
+
+            document.getElementById("message").innerHTML =
+                "Preferences Cleared";
+        }
+
+    </script>
+
+</body>
+</html>
